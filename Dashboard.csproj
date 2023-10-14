@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <StartupObject>Dashboard.App</StartupObject>
+  </PropertyGroup>
+
+  
+  <!--
+    We changed the Build Action for App.xaml from ApplicationDefinition to Page
+    We need both items below
+    These items below are setting the entry point for the application
+    The first item is removing the ApplicationDefinition, which is the default entry point
+    The second item is adding the Page, which is the new entry point, where we have the Main method
+  -->
+  <ItemGroup>
+    <ApplicationDefinition Remove="App.xaml" />
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+  </ItemGroup>
+ 
+</Project>
