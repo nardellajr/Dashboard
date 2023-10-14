@@ -3,17 +3,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:views="clr-namespace:Dashboard.Views"
         mc:Ignorable="d"
-        Title="Mike's Dashboard" Height="768" Width="1024">
+        Title="Housing Market Dashboard" Height="768" Width="1024"
+        Style="{StaticResource MaterialDesignWindow}">
     
     <Grid>
-        <TabControl>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem Header="E_xit" Command="{x:Static ApplicationCommands.Close}"/>
+            </MenuItem>
+        </Menu>
+
+        <TabControl
+            VerticalContentAlignment="Bottom"
+            materialDesign:ColorZoneAssist.Mode="PrimaryMid"
+            Style="{StaticResource MaterialDesignNavigationRailTabControl}">
             <TabItem>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="Images/Icon.png" Width="16" Height="16" Margin="0,0,5,0"/>
-                        <TextBlock Text="Tab 1"/>
+                    <StackPanel>
+                        <materialDesign:PackIcon
+                            Width="24"
+                            Height="24"
+                            HorizontalAlignment="Center"
+                            Kind="GraphBellCurve"/>
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                TextWrapping="Wrap"
+                                Text="Housing Factors"/>
                     </StackPanel>
                 </TabItem.Header>
                 <views:HousingMarketFactorsView x:Name="HousingMarketFactorsView" />
