@@ -42,6 +42,22 @@
                 </TabItem.Header>
                 <views:HousingMarketFactorsView x:Name="HousingMarketFactorsView" />
             </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel>
+                        <materialDesign:PackIcon
+                            Width="24"
+                            Height="24"
+                            HorizontalAlignment="Center"
+                            Kind="GraphHistogram"/>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            TextWrapping="Wrap"
+                            Text="Economic Indicators"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <views:EconomicIndicatorsView x:Name="EconomicIndicatorsView" />
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
