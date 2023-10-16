@@ -7,23 +7,18 @@
         xmlns:views="clr-namespace:Dashboard.Views"
         mc:Ignorable="d"
         Title="Housing Market Dashboard" Height="768" Width="1024"
-        Style="{StaticResource MaterialDesignWindow}">
+        Style="{StaticResource MaterialDesignWindow}"
+        Topmost="True">
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Menu>
-            <MenuItem Header="_File">
-                <MenuItem Header="E_xit" Command="{x:Static ApplicationCommands.Close}"/>
-            </MenuItem>
-        </Menu>
-
         <TabControl
-            VerticalContentAlignment="Bottom"
+            Grid.Row="0"
+            VerticalContentAlignment="Top"
             materialDesign:ColorZoneAssist.Mode="PrimaryMid"
             Style="{StaticResource MaterialDesignNavigationRailTabControl}">
             <TabItem>
